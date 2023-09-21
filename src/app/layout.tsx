@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
     title: "Jack Szeto - Software Engineer",
     description: "Jack Szeto's personal website and portfolio.",
+    themeColor: "#070707",
 };
 
 export default function RootLayout({
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <head />
+            <head></head>
             <body
                 className={cn(
                     "min-h-screen bg-background font-sans antialiased",
@@ -25,7 +26,7 @@ export default function RootLayout({
             >
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="system"
+                    defaultTheme="dark"
                     enableSystem
                 >
                     {children}
