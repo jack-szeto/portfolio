@@ -1,11 +1,9 @@
 export default function RootLayout({
     children,
+    banner,
 }: {
     children: React.ReactNode;
+    banner: React.ReactNode;
 }) {
-    return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            {children}
-        </main>
-    );
+    return <main className="min-h-screen flex flex-col">{children}</main>;
 }
