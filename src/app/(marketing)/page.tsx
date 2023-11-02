@@ -27,9 +27,9 @@ const Page = () => {
 				</Button>
 			</div>
 
-			{/* some graphical effect at the bottom right */}
+			{/* TODO: some animated graphical effect at the bottom right */}
 			<div className="absolute bottom-0 right-0">
-                
+				
 			</div>
 		</section>
 	);
