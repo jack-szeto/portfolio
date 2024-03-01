@@ -11,7 +11,7 @@ export default function RootLayout({
 	featured: React.ReactNode;
 }) {
 	return (
-		<TracingBeam className="min-h-screen flex flex-col max-w-screen-xl">
+		<TracingBeam className="min-h-screen flex flex-col gap-12 max-w-screen-xl">
 			{children}
 			{featured}
 		</TracingBeam>
