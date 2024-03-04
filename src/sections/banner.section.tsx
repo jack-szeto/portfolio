@@ -43,7 +43,7 @@ export const BannerSection: React.FC<BannerSectionProps> = (
 
 					<motion.div variants={FlyInVariant}>
 						<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl gradient-text">
-							Speed, Performance, and Seamless Interactivity.
+							Speed, Performance,<br /> and Seamless Interactivity.
 						</h1>
 					</motion.div>
 
@@ -89,12 +89,6 @@ export const BannerSection: React.FC<BannerSectionProps> = (
 								</Link>
 							</motion.div>
 						</div>
-					</div>
-
-					{/* TODO: some animated graphical effect at the bottom right */}
-					<div className="absolute bottom-0 right-0 w-60 max-w-[50%] aspect-square p-8 pointer-events-none">
-						{/* the polygon mask does not work */}
-						{/* <PolygonParticle /> */}
 					</div>
 				</motion.section>
 			</AnimatePresence>

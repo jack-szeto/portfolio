@@ -3,17 +3,21 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export default function RootLayout({
 	children,
-	banner,
 	featured,
+	about,
 }: {
 	children: React.ReactNode;
-	banner: React.ReactNode;
 	featured: React.ReactNode;
+	about: React.ReactNode;
 }) {
 	return (
-		<TracingBeam className="min-h-screen flex flex-col gap-12 max-w-screen-xl">
+		<TracingBeam
+			className="flex flex-col gap-32"
+			containerClassName="min-h-dvh max-w-screen-xl"
+		>
 			{children}
 			{featured}
+			{about}
 		</TracingBeam>
 	);
 }

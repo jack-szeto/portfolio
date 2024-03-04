@@ -4,7 +4,9 @@ import { FadeInVariant } from "@/animations/fade-in.variant";
 import { FlyInVariant } from "@/animations/fly-in.variant";
 import { ProjectCard } from "@/components/project-card";
 import { Project } from "@/data/projects";
+import { cn } from "@/lib/utils";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
+import Link from "next/link";
 
 type FeaturedSectionProps = {
 	className?: string;
@@ -25,32 +27,50 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 			<AnimatePresence mode="popLayout">
 				<section
 					id="featured"
-					className=" relative max-w-screen-xl w-full flex flex-col gap-8 p-8 mx-auto"
+					ref={ref}
+					className={cn(
+						" relative max-w-screen-xl w-full p-8",
+						className
+					)}
 				>
-					<motion.div>
-						<h2 className="scroll-m-20 text-2xl font-semibold tracking-tight gradient-text">
-							Featured
-						</h2>
-					</motion.div>
 					<motion.div
-						className="flex justify-evenly items-center gap-8"
+						className="flex flex-col gap-8"
 						variants={FadeInVariant}
 						initial="hidden"
 						whileInView="visible"
 						exit="hidden"
 					>
-						{items.map((item) => (
-							<motion.div
-								key={item.title}
-								variants={FlyInVariant}
-							>
-								<ProjectCard
+						<motion.h2
+							className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+							variants={FlyInVariant}
+						>
+							Featured Works
+						</motion.h2>
+						<div className="flex justify-evenly items-center gap-8">
+							{items.map((item) => (
+								<motion.div
 									key={item.title}
-									project={item}
-									className=" flex-1"
-								/>
-							</motion.div>
-						))}
+									variants={FlyInVariant}
+								>
+									<ProjectCard
+										key={item.title}
+										project={item}
+										className=" flex-1"
+									/>
+								</motion.div>
+							))}
+						</div>
+						<motion.div
+							className="flex items-center justify-end gap-4"
+							variants={FlyInVariant}
+						>
+							<Link
+								href="/projects"
+								className="font-medium text-primary underline underline-offset-4"
+							>
+								See more
+							</Link>
+						</motion.div>
 					</motion.div>
 				</section>
 			</AnimatePresence>

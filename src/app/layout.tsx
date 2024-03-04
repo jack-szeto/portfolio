@@ -15,8 +15,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
 	children,
+	footer,
 }: {
 	children: React.ReactNode;
+	footer: React.ReactNode;
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning className="scroll-smooth">
@@ -33,6 +35,7 @@ export default function RootLayout({
 					enableSystem
 				>
 					{children}
+					{footer}
 				</ThemeProvider>
 			</body>
 		</html>
