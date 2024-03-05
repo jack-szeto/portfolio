@@ -1,14 +1,15 @@
-import { Background } from "@/components/ui/background";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export default function RootLayout({
 	children,
 	featured,
 	about,
+	skills,
 }: {
 	children: React.ReactNode;
 	featured: React.ReactNode;
 	about: React.ReactNode;
+	skills: React.ReactNode;
 }) {
 	return (
 		<TracingBeam
@@ -18,6 +19,7 @@ export default function RootLayout({
 			{children}
 			{featured}
 			{about}
+			{skills}
 		</TracingBeam>
 	);
 }
