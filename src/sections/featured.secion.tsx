@@ -3,6 +3,7 @@
 import { FadeInVariant } from "@/animations/fade-in.variant";
 import { FlyInVariant } from "@/animations/fly-in.variant";
 import { ProjectCard } from "@/components/project-card";
+import { Button } from "@/components/ui/button";
 import {
 	Carousel,
 	CarouselContent,
@@ -74,11 +75,14 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 							className="flex items-center justify-end gap-4"
 							variants={FlyInVariant}
 						>
-							<Link
-								href="/projects"
-								className="font-medium text-primary underline underline-offset-4"
-							>
-								See more
+							<Link href="/projects" passHref>
+								<Button
+									size={"lg"}
+									variant={"default"}
+									className="rounded-full"
+								>
+									See All Projects
+								</Button>
 							</Link>
 						</motion.div>
 					</motion.div>

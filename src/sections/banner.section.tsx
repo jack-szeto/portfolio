@@ -81,7 +81,7 @@ export const BannerSection: React.FC<BannerSectionProps> = (
 								<Link href={"#featured"} passHref>
 									<Button
 										size={"lg"}
-										variant={"outline"}
+										variant={"default"}
 										className="  rounded-full"
 									>
 										See My Works
