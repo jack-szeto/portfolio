@@ -16,8 +16,8 @@ export type Project = {
 	date?: Date;
 };
 
-export const FeaturedProjects = (): Project[] => {
-	return projects.slice(0, 3);
+export const FeaturedProjects = (count: number = 3): Project[] => {
+	return projects.slice(0, count);
 };
 
 export const GetProject = (id: string): Project | undefined => {

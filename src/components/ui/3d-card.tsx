@@ -64,7 +64,7 @@ export const CardContainer = ({
 					className={cn(
 						"flex items-center justify-center relative transition-all duration-200 ease-linear",
 						className,
-						isMouseEntered ? "shadow-2xl shadow-gray-200 dark:shadow-gray-800" : ""
+						isMouseEntered ? "shadow-lg md:shadow-2xl shadow-gray-200 dark:shadow-gray-800" : ""
 					)}
 					style={{
 						transformStyle: "preserve-3d",

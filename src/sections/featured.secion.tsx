@@ -3,10 +3,16 @@
 import { FadeInVariant } from "@/animations/fade-in.variant";
 import { FlyInVariant } from "@/animations/fly-in.variant";
 import { ProjectCard } from "@/components/project-card";
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+} from "@/components/ui/carousel";
 import { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import Link from "next/link";
+import React from "react";
 
 type FeaturedSectionProps = {
 	className?: string;
@@ -46,20 +52,24 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 						>
 							Featured Works
 						</motion.h2>
-						<div className="flex justify-evenly items-center gap-8">
-							{items.map((item) => (
-								<motion.div
-									key={item.title}
-									variants={FlyInVariant}
-								>
-									<ProjectCard
+						<Carousel>
+							<CarouselContent className="p-8 md:py-16">
+								{items.map((item) => (
+									<CarouselItem
+										className=" basis-10/12 md:basis-1/2 lg:basis-1/3"
 										key={item.title}
-										project={item}
-										className=" flex-1"
-									/>
-								</motion.div>
-							))}
-						</div>
+									>
+										<motion.div variants={FlyInVariant}>
+											<ProjectCard
+												key={item.title}
+												project={item}
+												className=" flex-1"
+											/>
+										</motion.div>
+									</CarouselItem>
+								))}
+							</CarouselContent>
+						</Carousel>
 						<motion.div
 							className="flex items-center justify-end gap-4"
 							variants={FlyInVariant}
