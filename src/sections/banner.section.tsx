@@ -1,7 +1,7 @@
 "use client";
 
 import { BorderMagicButton } from "@/components/ui/border-magic-button";
-import { Button } from "@/components/ui/button";
+import { BottomGradient, Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import Image from "next/image";
@@ -43,7 +43,8 @@ export const BannerSection: React.FC<BannerSectionProps> = (
 
 					<motion.div variants={FlyInVariant}>
 						<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl gradient-text">
-							Speed, Performance,<br /> and Seamless Interactivity.
+							Speed, Performance,
+							<br /> and Seamless Interactivity.
 						</h1>
 					</motion.div>
 
@@ -82,9 +83,10 @@ export const BannerSection: React.FC<BannerSectionProps> = (
 									<Button
 										size={"lg"}
 										variant={"default"}
-										className="  rounded-full"
+										className="rounded-full"
 									>
 										See My Works
+										<BottomGradient />
 									</Button>
 								</Link>
 							</motion.div>

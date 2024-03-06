@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const badgeVariants = cva(
-	"relative inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+	"group/badge relative inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
 	{
 		variants: {
 			variant: {
@@ -30,16 +30,11 @@ export interface BadgeProps
 function Badge({ className, variant, children, ...props }: BadgeProps) {
 	return (
 		<div className={cn(badgeVariants({ variant }), className)} {...props}>
-			<div className="absolute inset-x-0 h-0.5 w-2/3 mx-auto -bottom-px shadow-2xl  bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
 			{children}
+      <span className="group-hover/badge:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+      <span className="group-hover/badge:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
 		</div>
 	);
 }
 
 export { Badge, badgeVariants };
-<button className="px-8 py-2 rounded-full relative bg-slate-700 text-white text-sm hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-slate-600">
-  <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
-  <span className="relative z-20">
-    Top gradient
-  </span>
-</button>

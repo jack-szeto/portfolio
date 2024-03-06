@@ -41,7 +41,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = (
 					>
 						<motion.h2
 							className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0"
-							variants={FadeInVariant}
+							variants={FlyInVariant}
 						>
 							Skills
 						</motion.h2>

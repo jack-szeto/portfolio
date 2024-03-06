@@ -5,11 +5,13 @@ export default function RootLayout({
 	featured,
 	about,
 	skills,
+	contactForm,
 }: {
 	children: React.ReactNode;
 	featured: React.ReactNode;
 	about: React.ReactNode;
 	skills: React.ReactNode;
+	contactForm: React.ReactNode;
 }) {
 	return (
 		<TracingBeam
@@ -20,6 +22,7 @@ export default function RootLayout({
 			{featured}
 			{about}
 			{skills}
+			{contactForm}
 		</TracingBeam>
 	);
 }

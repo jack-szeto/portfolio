@@ -15,6 +15,7 @@ import {
 	BoxDecorationDirection,
 	TopRightVariant,
 } from "@/components/box-decoration";
+import Link from "next/link";
 
 type BriefAboutSectionProps = {
 	className?: string;
@@ -48,7 +49,7 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 					>
 						<motion.h2
 							className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0"
-							variants={FadeInVariant}
+							variants={FlyInVariant}
 						>
 							About Me
 						</motion.h2>
@@ -57,7 +58,22 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 							<div className=" flex flex-col items-start gap-16 flex-1 lg:flex-grow-0 lg:flex-shrink-1 lg:basis-auto z-10">
 								<AboutSection
 									title="🚀Hi, I'm Jack: Full-Stack Developer"
-									description="Hello! I'm Jack, a software engineer with a deep love for all things tech. I've spent a good chunk of my career diving into full-stack development and cloud computing, crafting web-based software and websites that aim to solve real-world problems. For me, it's all about using the latest and greatest in technology to build solutions that truly make a difference."
+									description={
+										<>
+											Hello! I&apos;m Jack, a software engineer
+											with a deep love for all things
+											tech. I&apos;ve spent a good chunk of my{" "}
+											<Link href={"/career"} className=" underline">career</Link> diving into full-stack
+											development and cloud computing,
+											crafting web-based software and
+											websites that aim to solve
+											real-world problems. For me, it&apos;s
+											all about using the latest and
+											greatest in technology to build
+											solutions that truly make a
+											difference.
+										</>
+									}
 									image={{
 										imageSrc: about3,
 										imageAlt: "About Me",
@@ -188,7 +204,7 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 
 type AboutSectionProps = {
 	title: string;
-	description: string;
+	description: React.ReactNode;
 	reversedRow?: boolean;
 	image: {
 		imageSrc: string | StaticImageData;
@@ -236,7 +252,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
 							BoxDecorationDirection.TopRight
 								? "right-0"
 								: "left-1/4"
-						} top-1/3`}
+						} top-1/3 -z-10`}
 						direction={decoration.direction}
 						childCount={decoration.childCount}
 					/>

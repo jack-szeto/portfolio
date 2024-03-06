@@ -3,7 +3,7 @@
 import { FadeInVariant } from "@/animations/fade-in.variant";
 import { FlyInVariant } from "@/animations/fly-in.variant";
 import { ProjectCard } from "@/components/project-card";
-import { Button } from "@/components/ui/button";
+import { BottomGradient, Button } from "@/components/ui/button";
 import {
 	Carousel,
 	CarouselContent,
@@ -42,7 +42,6 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 				>
 					<motion.div
 						className="flex flex-col gap-8 items-center"
-						variants={FadeInVariant}
 						initial="hidden"
 						whileInView="visible"
 						exit="hidden"
@@ -74,6 +73,8 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 						<motion.div
 							className="flex items-center justify-end gap-4"
 							variants={FlyInVariant}
+							initial="hidden"
+							whileInView="visible"
 						>
 							<Link href="/projects" passHref>
 								<Button
@@ -82,6 +83,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 									className="rounded-full"
 								>
 									See All Projects
+									<BottomGradient />
 								</Button>
 							</Link>
 						</motion.div>
