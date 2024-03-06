@@ -3,103 +3,11 @@
 import { FadeInVariant } from "@/animations/fade-in.variant";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { IconBrandNextjs } from "@tabler/icons-react";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
-
-/*
-Skills
-Programming
-
-Nextjs, Reactjs, Angular, Laravel, HTML5, SCSS, etc
-Nodejs, SQL, MongoDB
-Docker
-
-Unity, C#, .Net, Java
-Flutter
-
-Editing
-Photoshop
-
-AWS cloud server
-Firebase
-*/
-const data = [
-	{
-		value: "Next.js",
-		count: 80,
-		props: {
-			icon: <IconBrandNextjs />,
-		},
-	},
-	{
-		value: "React",
-		count: 90,
-	},
-	{
-		value: "Angular",
-		count: 30,
-	},
-	{
-		value: "Laravel",
-		count: 20,
-	},
-	{
-		value: "HTML5",
-		count: 90,
-	},
-	{
-		value: "SCSS",
-		count: 80,
-	},
-	{
-		value: "Node.js",
-		count: 50,
-	},
-	{
-		value: "SQL",
-		count: 60,
-	},
-	{
-		value: "MongoDB",
-		count: 50,
-	},
-	{
-		value: "Docker",
-		count: 70,
-	},
-	{
-		value: "Unity",
-		count: 80,
-	},
-	{
-		value: "C#",
-		count: 80,
-	},
-	{
-		value: ".Net",
-		count: 30,
-	},
-	{
-		value: "Java",
-		count: 10,
-	},
-	{
-		value: "Flutter",
-		count: 40,
-	},
-	{
-		value: "Photoshop",
-		count: 50,
-	},
-	{
-		value: "AWS",
-		count: 50,
-	},
-	{
-		value: "Firebase",
-		count: 40,
-	},
-];
+import Image, { StaticImageData } from "next/image";
+import React from "react";
+import { FlyInVariant } from "@/animations/fly-in.variant";
+import { Skill, skills } from "@/data/skills";
 
 type SkillsSectionProps = {
 	className?: string;
@@ -112,7 +20,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = (
 		<MotionConfig
 			transition={{
 				type: "spring",
-				duration: 1.666,
+				duration: 1.333,
 				staggerChildren: 0.333,
 			}}
 		>
@@ -126,7 +34,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = (
 					)}
 				>
 					<motion.div
-						className="flex flex-col gap-8 justify-start items-start"
+						className="flex flex-col gap-8 justify-start items-center"
 						initial="hidden"
 						whileInView="visible"
 						exit="hidden"
@@ -139,12 +47,58 @@ export const SkillsSection: React.FC<SkillsSectionProps> = (
 						</motion.h2>
 
 						<motion.div
-							className=" w-full p-16"
+							className=" w-full px-4 md:px-16 py-0"
 							variants={FadeInVariant}
-						></motion.div>
+						>
+							<SkillCloud skills={skills} />
+						</motion.div>
 					</motion.div>
 				</section>
 			</AnimatePresence>
 		</MotionConfig>
+	);
+};
+
+type SkillCloudProps = {
+	className?: string;
+	skills: Skill[];
+};
+const SkillCloud: React.FC<SkillCloudProps> = ({ skills, className }) => {
+	skills.sort((a, b) => b.weight - a.weight);
+	return (
+		<motion.div
+			className={cn(
+				"flex flex-wrap gap-4 justify-center items-center p-4",
+				className
+			)}
+			initial="hidden"
+			whileInView="visible"
+			transition={{
+				staggerChildren: 0.1,
+			}}
+		>
+			{skills.map((skill, i) => (
+				<motion.div
+					key={i}
+					className=""
+					whileHover={{
+						scale: 1.1,
+						transition: {
+							duration: 0.1666,
+						},
+					}}
+					variants={FlyInVariant}
+				>
+					<Badge className="flex gap-2 px-4 py-1">
+						<Image
+							src={skill.icon.src}
+							alt={skill.icon.alt}
+							className="w-6 h-6"
+						/>
+						<span className=" select-none">{skill.value}</span>
+					</Badge>
+				</motion.div>
+			))}
+		</motion.div>
 	);
 };

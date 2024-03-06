@@ -27,7 +27,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 		<MotionConfig
 			transition={{
 				type: "spring",
-				duration: 1.666,
+				duration: 1.333,
 				staggerChildren: 0.333,
 			}}
 		>
@@ -41,7 +41,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 					)}
 				>
 					<motion.div
-						className="flex flex-col gap-8"
+						className="flex flex-col gap-8 items-center"
 						variants={FadeInVariant}
 						initial="hidden"
 						whileInView="visible"

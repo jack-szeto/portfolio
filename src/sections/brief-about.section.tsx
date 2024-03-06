@@ -27,7 +27,7 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 		<MotionConfig
 			transition={{
 				type: "spring",
-				duration: 1.666,
+				duration: 1.333,
 				staggerChildren: 0.333,
 			}}
 		>
@@ -41,7 +41,7 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 					)}
 				>
 					<motion.div
-						className="flex flex-col gap-8 justify-start items-start"
+						className="flex flex-col gap-8 justify-start items-center"
 						initial="hidden"
 						whileInView="visible"
 						exit="hidden"
@@ -56,8 +56,8 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 						<div className="w-full flex flex-row items-stretch justify-stretch">
 							<div className=" flex flex-col items-start gap-16 flex-1 lg:flex-grow-0 lg:flex-shrink-1 lg:basis-auto z-10">
 								<AboutSection
-									title="Passionate Technology Enthusiast & Full-Stack Developer"
-									description="I'm Jack, a software engineer with a fervent passion for leveraging cutting-edge technology to develop innovative solutions. With solid years of experience in the IT industry, I specialize in full-stack development, cloud computing, and creating dynamic web-based software and websites."
+									title="🚀Hi, I'm Jack: Full-Stack Developer"
+									description="Hello! I'm Jack, a software engineer with a deep love for all things tech. I've spent a good chunk of my career diving into full-stack development and cloud computing, crafting web-based software and websites that aim to solve real-world problems. For me, it's all about using the latest and greatest in technology to build solutions that truly make a difference."
 									image={{
 										imageSrc: about3,
 										imageAlt: "About Me",
@@ -69,8 +69,8 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 									}}
 								/>
 								<AboutSection
-									title="Beyond Code: A Game Developer at Heart"
-									description="When I'm not coding for work, I dive into the world of game development, exploring new narratives and mechanics. This hobby not only fuels my creativity but also sharpens my problem-solving skills, allowing me to bring fresh perspectives to professional projects."
+									title="🎮Beyond Code: A Game Dev at Heart"
+									description="Away from the professional grind, you'll find me lost in the world of game development. It's here that I get to experiment with new stories and gameplay mechanics. This isn't just playtime, though; it sharpens my creativity and problem-solving abilities, enriching my work in unexpected ways."
 									reversedRow
 									image={{
 										imageSrc: about2,
@@ -83,8 +83,8 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 									}}
 								/>
 								<AboutSection
-									title="Driven by Innovation"
-									description="My journey in technology is propelled by an unwavering pursuit of innovation and a commitment to enriching lives through meaningful projects. I'm dedicated to crafting engaging digital experiences that leave a lasting impact."
+									title="💡What Drives Me? Innovation and Impact"
+									description="At the heart of it, I'm driven by a desire to innovate and create digital experiences that resonate. Whether it's through my professional work or personal projects, my goal is to leave a positive mark on the world, one line of code at a time."
 									image={{
 										imageSrc: about1,
 										imageAlt: "About Me",
