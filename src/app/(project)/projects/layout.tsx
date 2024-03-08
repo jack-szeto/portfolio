@@ -2,16 +2,8 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export default function Layout({
 	children,
-	featured,
-	about,
-	skills,
-	contactForm,
 }: {
 	children: React.ReactNode;
-	featured: React.ReactNode;
-	about: React.ReactNode;
-	skills: React.ReactNode;
-	contactForm: React.ReactNode;
 }) {
 	return (
 		<TracingBeam
@@ -19,10 +11,6 @@ export default function Layout({
 			containerClassName="min-h-dvh max-w-screen-xl"
 		>
 			{children}
-			{featured}
-			{about}
-			{skills}
-			{contactForm}
 		</TracingBeam>
 	);
 }
