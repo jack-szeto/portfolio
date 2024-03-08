@@ -41,7 +41,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = (
 		>
 			<AnimatePresence mode="popLayout">
 				<section
-					id="about"
+					id="contact"
 					ref={ref}
 					className={cn(
 						" relative max-w-screen-xl w-full p-8 overflow-x-clip overflow-y-visible",
@@ -84,7 +84,24 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = (
 
 						<div className="flex flex-col gap-0">
 							<SendMessageForm />
-							<div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+
+							<motion.div
+								className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full"
+								variants={FlyInVariant}
+							/>
+
+							<motion.div
+								className="scroll-m-20 text-lg font-light tracking-tight"
+								variants={FlyInVariant}
+							>
+								{"Or you can reach me at "}
+								<a
+									href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
+									className="font-semibold text-blue-500 dark:text-blue-400"
+								>
+									{process.env.NEXT_PUBLIC_EMAIL}
+								</a>
+							</motion.div>
 						</div>
 					</motion.div>
 				</section>

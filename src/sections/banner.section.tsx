@@ -74,9 +74,11 @@ export const BannerSection: React.FC<BannerSectionProps> = (
 
 						<div className=" flex flex-row gap-4">
 							<motion.div variants={FlyInVariant}>
-								<BorderMagicButton size={"lg"}>
-									Contact Me
-								</BorderMagicButton>
+								<Link href={"#contact"} passHref>
+									<BorderMagicButton size={"lg"}>
+										Contact Me
+									</BorderMagicButton>
+								</Link>
 							</motion.div>
 							<motion.div variants={FlyInVariant}>
 								<Link href={"#featured"} passHref>
