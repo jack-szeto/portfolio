@@ -7,10 +7,12 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { useRef, useState } from "react";
 
 export interface TextareaProps
-	extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+	extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+	error?: boolean;
+}
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-	({ className, ...props }, ref) => {
+	({ className, error, ...props }, ref) => {
 		const [value, setValue] = useState("");
 		const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -34,6 +36,10 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 			mouseX.set(clientX - left);
 			mouseY.set(clientY - top);
 		}
+
+		// Expose textAreaRef to parent component
+		React.useImperativeHandle(ref, () => textAreaRef.current!, []);
+
 		return (
 			<motion.div
 				style={{
@@ -59,12 +65,13 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             disabled:cursor-not-allowed disabled:opacity-50
             dark:shadow-[0px_0px_1px_1px_var(--neutral-700)]
             group-hover/input:shadow-none transition duration-400 resize-none`,
+						error && "shadow-input-error dark:shadow-input-error",
 						className
 					)}
 					ref={textAreaRef}
 					{...props}
 					onChange={handleChange}
-          value={value}
+					value={value}
 				/>
 			</motion.div>
 		);

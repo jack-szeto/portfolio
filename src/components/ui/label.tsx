@@ -5,35 +5,62 @@ import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 
 import { cn } from "@/lib/utils";
-
+import { FieldErrors } from "react-hook-form";
+import { motion } from "framer-motion";
+import { FlyInVariant } from "@/animations/fly-in.variant";
 
 const Label = React.forwardRef<
-  React.ElementRef<typeof LabelPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
+	React.ElementRef<typeof LabelPrimitive.Root>,
+	React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
 >(({ className, ...props }, ref) => (
-  <LabelPrimitive.Root
-    ref={ref}
-    className={cn(
-      "text-sm font-medium text-black dark:text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
-      className
-    )}
-    {...props}
-  />
+	<LabelPrimitive.Root
+		ref={ref}
+		className={cn(
+			"text-sm font-medium text-black dark:text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+			className
+		)}
+		{...props}
+	/>
 ));
 Label.displayName = LabelPrimitive.Root.displayName;
 
 export { Label };
 
 export const LabelInputContainer = ({
-  children,
-  className,
+	children,
+	className,
 }: {
-  children: React.ReactNode;
-  className?: string;
+	children: React.ReactNode;
+	className?: string;
 }) => {
-  return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      {children}
-    </div>
-  );
+	return (
+		<div className={cn("flex flex-col space-y-2 w-full", className)}>
+			{children}
+		</div>
+	);
+};
+
+export const ErrorMessage = ({
+	errors,
+	field: name,
+	className,
+}: {
+	errors: FieldErrors;
+	field: string;
+	className?: string;
+}) => {
+	return (
+		<div className={cn("text-muted-foreground text-xs", className)}>
+			{!!errors?.[name] && (
+				<motion.p
+					variants={FlyInVariant}
+					initial="hidden"
+					animate="visible"
+					exit="hidden"
+				>
+					{errors[name]?.message?.toString()}
+				</motion.p>
+			)}
+		</div>
+	);
 };

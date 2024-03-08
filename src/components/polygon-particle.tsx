@@ -33,7 +33,6 @@ export const PolygonParticle: React.FC<PolygonParticleProps> = ({
 
 	const particlesLoaded = async (container?: Container) => {
 		if (container) {
-			console.log(container.options);
 			controls.start({
 				opacity: 1,
 				transition: {
