@@ -72,6 +72,7 @@ export const ProjectView: React.FC<ProjectViewProps> = ({
 													<Image
 														src={media.src}
 														alt={`${project.title} - ${i}`}
+														placeholder="blur"
 														className="w-full h-full object-contain"
 													/>
 												) : (
