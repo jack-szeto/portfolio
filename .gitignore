@@ -33,3 +33,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# next-video
+src/assets/videos/*
+!src/assets/videos/*.json
+!src/assets/videos/*.js
+!src/assets/videos/*.ts
+public/_next-video
+
+.vercel

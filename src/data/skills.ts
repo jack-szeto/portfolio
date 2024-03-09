@@ -1,4 +1,3 @@
-
 import { StaticImageData } from "next/image";
 
 import angular from "@/assets/images/brands/angular.svg";
@@ -9,16 +8,21 @@ import docker from "@/assets/images/brands/docker.svg";
 import firebase from "@/assets/images/brands/firebase.svg";
 import flutter from "@/assets/images/brands/flutter.svg";
 import html from "@/assets/images/brands/html.svg";
+import javascript from "@/assets/images/brands/javascript.svg";
 import laravel from "@/assets/images/brands/laravel.svg";
 import mongodb from "@/assets/images/brands/mongodb.svg";
+import mysql from "@/assets/images/brands/mysql.svg";
 import nextjs from "@/assets/images/brands/nextjs.svg";
+import php from "@/assets/images/brands/php.svg";
 import postgresql from "@/assets/images/brands/postgresql.svg";
 import react from "@/assets/images/brands/react.svg";
 import tailwindcss from "@/assets/images/brands/tailwindcss.svg";
+import typescript from "@/assets/images/brands/typescript.svg";
 import unity from "@/assets/images/brands/unity.svg";
+import { Tech } from "./techs";
 
 export type Skill = {
-	value: string;
+	value: Tech;
 	weight: number;
 	icon: {
 		src: string | StaticImageData;
@@ -28,78 +32,98 @@ export type Skill = {
 
 export const skills: Skill[] = [
 	{
-		value: "Next.js",
+		value: Tech.Nextjs,
 		weight: 95,
-		icon: { src: nextjs, alt: "Next.js" },
+		icon: { src: nextjs, alt: Tech.Nextjs },
 	},
 	{
-		value: "React",
+		value: Tech.React,
 		weight: 90,
-		icon: { src: react, alt: "React" },
+		icon: { src: react, alt: Tech.React },
 	},
 	{
-		value: "Angular",
+		value: Tech.Angular,
 		weight: 40,
-		icon: { src: angular, alt: "Angular" },
+		icon: { src: angular, alt: Tech.Angular },
 	},
 	{
-		value: "Laravel",
+		value: Tech.Laravel,
 		weight: 30,
-		icon: { src: laravel, alt: "Laravel" },
+		icon: { src: laravel, alt: Tech.Laravel },
 	},
 	{
-		value: "HTML5",
+		value: Tech.PHP,
+		weight: 30,
+		icon: { src: php, alt: Tech.PHP },
+	},
+	{
+		value: Tech.TypeScript,
 		weight: 90,
-		icon: { src: html, alt: "HTML5" },
+		icon: { src: typescript, alt: Tech.TypeScript },
 	},
 	{
-		value: "CSS3",
+		value: Tech.JavaScript,
 		weight: 80,
-		icon: { src: css, alt: "CSS3" },
+		icon: { src: javascript, alt: Tech.JavaScript },
 	},
 	{
-		value: "TailwindCSS",
+		value: Tech.HTML5,
+		weight: 90,
+		icon: { src: html, alt: Tech.HTML5 },
+	},
+	{
+		value: Tech.CSS3,
+		weight: 80,
+		icon: { src: css, alt: Tech.CSS3 },
+	},
+	{
+		value: Tech.TailwindCSS,
 		weight: 70,
-		icon: { src: tailwindcss, alt: "TailwindCSS" },
+		icon: { src: tailwindcss, alt: Tech.TailwindCSS },
 	},
 	{
-		value: "PostgreSQL",
+		value: Tech.PostgreSQL,
 		weight: 60,
-		icon: { src: postgresql, alt: "PostgreSQL" },
+		icon: { src: postgresql, alt: Tech.PostgreSQL },
 	},
 	{
-		value: "MongoDB",
+		value: Tech.MySql,
 		weight: 50,
-		icon: { src: mongodb, alt: "MongoDB" },
+		icon: { src: mysql, alt: Tech.MySql },
 	},
 	{
-		value: "Docker",
+		value: Tech.MongoDB,
+		weight: 50,
+		icon: { src: mongodb, alt: Tech.MongoDB },
+	},
+	{
+		value: Tech.Docker,
 		weight: 70,
-		icon: { src: docker, alt: "Docker" },
+		icon: { src: docker, alt: Tech.Docker },
 	},
 	{
-		value: "Unity",
+		value: Tech.Unity,
 		weight: 80,
-		icon: { src: unity, alt: "Unity" },
+		icon: { src: unity, alt: Tech.Unity },
 	},
 	{
-		value: "C#",
+		value: Tech.CSharp,
 		weight: 80,
-		icon: { src: csharp, alt: "C#" },
+		icon: { src: csharp, alt: Tech.CSharp },
 	},
 	{
-		value: "Flutter",
+		value: Tech.Flutter,
 		weight: 40,
-		icon: { src: flutter, alt: "Flutter" },
+		icon: { src: flutter, alt: Tech.Flutter },
 	},
 	{
-		value: "AWS",
+		value: Tech.AWS,
 		weight: 50,
-		icon: { src: aws, alt: "AWS" },
+		icon: { src: aws, alt: Tech.AWS },
 	},
 	{
-		value: "Firebase",
+		value: Tech.Firebase,
 		weight: 40,
-		icon: { src: firebase, alt: "Firebase" },
+		icon: { src: firebase, alt: Tech.Firebase },
 	},
 ];

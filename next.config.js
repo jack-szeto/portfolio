@@ -1,3 +1,5 @@
+const { withNextVideo } = require("next-video/process");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
@@ -14,9 +16,12 @@ const nextConfig = {
 				hostname: "particles.js.org",
 				port: "",
 				pathname: "**",
-			}
+			},
 		],
 	},
 };
 
-module.exports = nextConfig;
+module.exports = withNextVideo(nextConfig, {
+	folder: "assets/videos",
+	provider: "vercel-blob",
+});
