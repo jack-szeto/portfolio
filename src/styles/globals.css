@@ -58,6 +58,6 @@
 	}
 
 	.gradient-text {
-		@apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50;
+		@apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-300 to-neutral-700 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-50 transition-all;
 	}
 }

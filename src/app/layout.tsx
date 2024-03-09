@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
+import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
 	title: "Jack Szeto - Software Engineer",
@@ -35,6 +36,7 @@ export default function RootLayout({
 					defaultTheme="dark"
 					enableSystem
 				>
+					<Header className="" />
 					{children}
 					{footer}
 					<Toaster />

@@ -88,7 +88,7 @@ export const BoxDecoration: React.FC<BoxDecorationProps> = ({
 		return (
 			<motion.div
 				className={cn(
-					"absolute w-2/3 aspect-square border border-gray-50"
+					"absolute w-2/3 aspect-square border border-gray-800 dark:border-gray-50"
 				)}
 				style={{
 					opacity: opacity,
@@ -107,7 +107,7 @@ export const BoxDecoration: React.FC<BoxDecorationProps> = ({
 			variants={FadeInVariant}
 		>
 			<motion.div
-				className="absolute w-full aspect-square border border-gray-50 opacity-50"
+				className="absolute w-full aspect-square border border-gray-800 dark:border-gray-50 opacity-50"
 				variants={boxVariants[direction]}
 				whileHover={{
 					scale: [1, 1.05, 1],

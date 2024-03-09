@@ -36,7 +36,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 					id="featured"
 					ref={ref}
 					className={cn(
-						" relative max-w-screen-xl w-full p-8",
+						" relative max-w-screen-xl w-full p-8 pt-14",
 						className
 					)}
 				>

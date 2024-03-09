@@ -44,7 +44,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = (
 					id="contact"
 					ref={ref}
 					className={cn(
-						" relative max-w-screen-xl w-full p-8 overflow-x-clip overflow-y-visible",
+						" relative max-w-screen-xl w-full p-8 pt-14 overflow-x-clip overflow-y-visible",
 						className
 					)}
 				>

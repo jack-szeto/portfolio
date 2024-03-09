@@ -3,7 +3,7 @@
 import { FadeInVariant } from "@/animations/fade-in.variant";
 import { FlyInVariant } from "@/animations/fly-in.variant";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, MotionConfig, Variants, motion } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import about1 from "@/assets/images/about/about_1.png";
 import about2 from "@/assets/images/about/about_2.png";
 import about3 from "@/assets/images/about/about_3.png";
@@ -37,7 +37,7 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 					id="about"
 					ref={ref}
 					className={cn(
-						" relative max-w-screen-xl w-full p-8 overflow-x-clip overflow-y-visible",
+						" relative max-w-screen-xl w-full p-8 pt-14 overflow-x-clip overflow-y-visible",
 						className
 					)}
 				>
@@ -63,7 +63,7 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 											Hello! I&apos;m Jack, a software engineer
 											with a deep love for all things
 											tech. I&apos;ve spent a good chunk of my{" "}
-											<Link href={"/career"} className=" underline">career</Link> diving into full-stack
+											<Link href={"/work"} className=" underline">career</Link> diving into full-stack
 											development and cloud computing,
 											crafting web-based software and
 											websites that aim to solve

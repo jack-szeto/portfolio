@@ -26,10 +26,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = (
 		>
 			<AnimatePresence mode="popLayout">
 				<section
-					id="about"
+					id="skill"
 					ref={ref}
 					className={cn(
-						" relative max-w-screen-xl w-full p-8 overflow-x-clip overflow-y-visible",
+						" relative max-w-screen-xl w-full p-8 pt-14 overflow-x-clip overflow-y-visible",
 						className
 					)}
 				>
@@ -89,7 +89,7 @@ const SkillCloud: React.FC<SkillCloudProps> = ({ skills, className }) => {
 					}}
 					variants={FlyInVariant}
 				>
-					<Badge className="flex gap-2 px-4 py-1">
+					<Badge className="flex gap-2 px-4 py-1 bg-slate-50 text-slate-950 hover:bg-slate-50/80">
 						<Image
 							src={skill.icon.src}
 							alt={skill.icon.alt}
