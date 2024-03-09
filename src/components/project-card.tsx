@@ -14,11 +14,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 	className,
 	project,
 }) => (
-	<CardContainer
-		className={cn("inter-var rounded-xl")}
-		containerClassName={className}
-	>
-		<Link href={`/projects/${project.id}`}>
+	<Link href={`/projects/${project.id}`}>
+		<CardContainer
+			className={cn("inter-var rounded-xl")}
+			containerClassName={className}
+		>
 			<CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border  ">
 				<CardItem
 					translateZ="70"
@@ -43,6 +43,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 					/>
 				</CardItem>
 			</CardBody>
-		</Link>
-	</CardContainer>
+		</CardContainer>
+	</Link>
 );

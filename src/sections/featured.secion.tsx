@@ -63,7 +63,6 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 											<ProjectCard
 												key={item.title}
 												project={item}
-												className=" flex-1"
 											/>
 										</motion.div>
 									</CarouselItem>
