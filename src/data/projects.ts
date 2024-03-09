@@ -7,6 +7,7 @@ import keweya from "@/assets/images/projects/keweya.com/uat.keweya.com.png";
 import keweya2 from "@/assets/images/projects/keweya.com/uat.keweya.com (1).png";
 
 import magnolia from "@/assets/images/projects/magnolia/magnolia-lab.com_en_.png";
+import magnolia1 from "@/assets/images/projects/magnolia/magnolia-lab.com_en_product_magnolia.png";
 import magnoliaVideo from "@/assets/videos/magnolia/magnolia show case.mp4";
 
 import makerverse from "@/assets/images/projects/makerverse.hk/makerverse.hk.png";
@@ -18,10 +19,10 @@ import ponghk2 from "@/assets/images/projects/ponghk.com/www.ponghk.com_venues_J
 import ponghk3 from "@/assets/images/projects/ponghk.com/www.ponghk.com_venues.png";
 
 import wildwester from "@/assets/images/projects/wildwesters.io/wildwesters.io_demo.png";
-import wildwester2 from "@/assets/images/projects/wildwesters.io/wildwesters.io_.png";
-import wildwester3 from "@/assets/images/projects/wildwesters.io/wildwesters.io_ (1).png";
-import wildwester4 from "@/assets/images/projects/wildwesters.io/wildwesters.io_ (2).png";
-import wildwester5 from "@/assets/images/projects/wildwesters.io/wildwesters.io_ (3).png";
+import wildwester2 from "@/assets/images/projects/wildwesters.io/wildwesters.io_ (2).png";
+import wildwester3 from "@/assets/images/projects/wildwesters.io/wildwesters.io_ (3).png";
+import wildwester4 from "@/assets/images/projects/wildwesters.io/wildwesters.io_.png";
+import wildwester5 from "@/assets/images/projects/wildwesters.io/wildwesters.io_ (1).png";
 import wildwester6 from "@/assets/images/projects/wildwesters.io/app.wildwesters.io_collection(iPhone 12 Pro).png";
 
 import { StaticImageData } from "next/image";
@@ -129,12 +130,16 @@ export const projects: Project[] = [
 		],
 		medias: [
 			{
-				type: "image",
-				src: magnolia,
-			},
-			{
 				type: "video",
 				src: magnoliaVideo,
+			},
+			{
+				type: "image",
+				src: magnolia1,
+			},
+			{
+				type: "image",
+				src: magnolia,
 			},
 		],
 		techStack: [

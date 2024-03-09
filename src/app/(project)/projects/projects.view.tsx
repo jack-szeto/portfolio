@@ -7,12 +7,12 @@ import { VariantProps, cva } from "class-variance-authority";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import React from "react";
 
-type ProjectPageViewProps = {
+type ProjectsViewProps = {
 	className?: string;
 	projects: Project[];
 };
 
-export const ProjectPageView: React.FC<ProjectPageViewProps> = ({
+export const ProjectsView: React.FC<ProjectsViewProps> = ({
 	className,
 	projects,
 }) => {

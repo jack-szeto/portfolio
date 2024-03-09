@@ -89,13 +89,13 @@ const SkillCloud: React.FC<SkillCloudProps> = ({ skills, className }) => {
 					}}
 					variants={FlyInVariant}
 				>
-					<Badge className="flex gap-2 px-4 py-1 bg-slate-50 text-slate-950 hover:bg-slate-50/80">
+					<Badge variant={"tech"}>
 						<Image
 							src={skill.icon.src}
 							alt={skill.icon.alt}
 							className="w-6 h-6"
 						/>
-						<span className=" select-none">{skill.value}</span>
+						<span className="ml-2 select-none">{skill.value}</span>
 					</Badge>
 				</motion.div>
 			))}

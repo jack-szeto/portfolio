@@ -15,6 +15,7 @@ const badgeVariants = cva(
 				destructive:
 					"border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
 				outline: "text-foreground",
+				tech: "px-4 py-1.5 bg-slate-50 text-slate-950 hover:bg-slate-50/80 rounded-lg",
 			},
 		},
 		defaultVariants: {
@@ -31,8 +32,8 @@ function Badge({ className, variant, children, ...props }: BadgeProps) {
 	return (
 		<div className={cn(badgeVariants({ variant }), className)} {...props}>
 			{children}
-      <span className="group-hover/badge:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-      <span className="group-hover/badge:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+			<span className="group-hover/badge:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+			<span className="group-hover/badge:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
 		</div>
 	);
 }

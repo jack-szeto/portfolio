@@ -1,5 +1,5 @@
 import { Background } from "@/components/ui/background";
-import { ProjectPageView } from "./project-page.view";
+import { ProjectsView } from "./projects.view";
 import { projects } from "@/data/projects";
 
 const Page = async () => {
@@ -7,9 +7,9 @@ const Page = async () => {
 	return (
 		<Background
 			className="max-w-screen-xl w-full min-h-[720px] flex flex-col justify-start gap-8 p-8 mx-auto"
-			variant="grid"
+			variant="dots"
 		>
-			<ProjectPageView projects={allProjects} />
+			<ProjectsView projects={allProjects} />
 		</Background>
 	);
 };
