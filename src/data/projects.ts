@@ -8,7 +8,7 @@ import keweya2 from "@/assets/images/projects/keweya.com/uat.keweya.com (1).png"
 
 import magnolia from "@/assets/images/projects/magnolia/magnolia-lab.com_en_.png";
 import magnolia1 from "@/assets/images/projects/magnolia/magnolia-lab.com_en_product_magnolia.png";
-import magnoliaVideo from "@/assets/videos/magnolia/magnolia show case.mp4";
+import magnoliaVideo from "@/assets/videos/magnolia show case.mp4";
 
 import makerverse from "@/assets/images/projects/makerverse.hk/makerverse.hk.png";
 import makerverse2 from "@/assets/images/projects/makerverse.hk/makerverse.hk_play.png";
