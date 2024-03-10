@@ -16,6 +16,7 @@ import {
 	TopRightVariant,
 } from "@/components/box-decoration";
 import Link from "next/link";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 type BriefAboutSectionProps = {
 	className?: string;
@@ -60,18 +61,24 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 									title="🚀Hi, I'm Jack: Full-Stack Developer"
 									description={
 										<>
-											Hello! I&apos;m Jack, a software engineer
-											with a deep love for all things
-											tech. I&apos;ve spent a good chunk of my{" "}
-											<Link href={"/work"} className=" underline">career</Link> diving into full-stack
-											development and cloud computing,
-											crafting web-based software and
-											websites that aim to solve
-											real-world problems. For me, it&apos;s
-											all about using the latest and
-											greatest in technology to build
-											solutions that truly make a
-											difference.
+											Hello! I&apos;m Jack, a software
+											engineer with a deep love for all
+											things tech. I&apos;ve spent a good
+											chunk of my{" "}
+											<Link
+												href={"/work"}
+												className=" underline"
+											>
+												career
+											</Link>{" "}
+											diving into full-stack development
+											and cloud computing, crafting
+											web-based software and websites that
+											aim to solve real-world problems.
+											For me, it&apos;s all about using
+											the latest and greatest in
+											technology to build solutions that
+											truly make a difference.
 										</>
 									}
 									image={{
@@ -119,55 +126,62 @@ export const BriefAboutSection: React.FC<BriefAboutSectionProps> = (
 								initial="hidden"
 								whileInView="visible"
 							>
-								<motion.div
-									className="z-10"
-									whileHover={{
-										scale: 1.05,
-										transition: {
-											duration: 0.33,
-										},
-									}}
-								>
-									<Image
-										className="w-80 max-w-[25dvw] aspect-square border-8 border-primary shadow-md hover:shadow-2xl transition"
-										src={about2}
-										alt="About Me"
-										placeholder="blur"
-									/>
+								<motion.div className="z-10">
+									<CardContainer
+										className={cn("")}
+										containerClassName={className}
+									>
+										<CardBody className="w-fit h-fit p-2 bg-primary shadow-md hover:shadow-2xl transition">
+											<CardItem translateZ={20}>
+												<Image
+													className=" w-80 max-w-[25dvw] aspect-square"
+													src={about2}
+													alt="About Me"
+													placeholder="blur"
+												/>
+											</CardItem>
+										</CardBody>
+									</CardContainer>
 								</motion.div>
 								<motion.div
 									className="absolute bottom-1/3 left-1/3"
 									variants={TopRightVariant}
-									whileHover={{
-										scale: 1.05,
-										transition: {
-											duration: 0.33,
-										},
-									}}
 								>
-									<Image
-										className="w-80 max-w-[25dvw] aspect-square border-8 border-primary shadow-md hover:shadow-2xl transition"
-										src={about1}
-										alt="About Me"
-										placeholder="blur"
-									/>
+									<CardContainer
+										className={cn("")}
+										containerClassName={className}
+									>
+										<CardBody className="w-fit h-fit p-2 bg-primary shadow-md hover:shadow-2xl transition">
+											<CardItem translateZ={20}>
+												<Image
+													className=" w-80 max-w-[25dvw] aspect-square"
+													src={about1}
+													alt="About Me"
+													placeholder="blur"
+												/>
+											</CardItem>
+										</CardBody>
+									</CardContainer>
 								</motion.div>
 								<motion.div
 									className="absolute top-1/3 right-1/3"
 									variants={BottomLeftVariant}
-									whileHover={{
-										scale: 1.05,
-										transition: {
-											duration: 0.33,
-										},
-									}}
 								>
-									<Image
-										className=" w-80 max-w-[25dvw] aspect-square border-8 border-primary shadow-md hover:shadow-2xl transition"
-										src={about3}
-										alt="About Me"
-										placeholder="blur"
-									/>
+									<CardContainer
+										className={cn("")}
+										containerClassName={className}
+									>
+										<CardBody className="w-fit h-fit p-2 bg-primary shadow-md hover:shadow-2xl transition">
+											<CardItem translateZ={20}>
+												<Image
+													className=" w-80 max-w-[25dvw] aspect-square"
+													src={about3}
+													alt="About Me"
+													placeholder="blur"
+												/>
+											</CardItem>
+										</CardBody>
+									</CardContainer>
 								</motion.div>
 
 								<motion.div
@@ -226,11 +240,14 @@ const AboutSection: React.FC<AboutSectionProps> = ({
 	const flexDirections = ["md:flex-row-reverse", "md:flex-row"];
 	const mdReversedRow = reversedRow ? flexDirections[0] : flexDirections[1];
 	return (
-		<div
+		<motion.div
 			className={cn(
 				"md:w-full flex flex-col-reverse md:flex-row justify-between items-center gap-8",
 				mdReversedRow
 			)}
+			initial="hidden"
+			whileInView="visible"
+			exit="hidden"
 		>
 			<motion.div className="relative" variants={FadeInVariant}>
 				<motion.h3
@@ -266,6 +283,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({
 					placeholder="blur"
 				/>
 			</motion.div>
-		</div>
+		</motion.div>
 	);
 };
