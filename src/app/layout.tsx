@@ -7,7 +7,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/header";
 import Footer from "@/components/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { BackToTop } from "@/components/back-to-top";
 
 export const metadata: Metadata = {
 	title: "Jack Szeto - Software Engineer",
@@ -43,6 +44,7 @@ export default function RootLayout({
 					{children}
 					<Footer />
 					<Toaster />
+					<BackToTop />
 				</ThemeProvider>
 				<SpeedInsights />
 				<Analytics />
