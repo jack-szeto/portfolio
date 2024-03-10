@@ -3,6 +3,7 @@ import React from "react";
 
 type BackgroundProps = {
 	className?: string;
+	id?: string;
 	children?: React.ReactNode;
 	variant?: "grid" | "dots";
 	backgroundContent?: React.ReactNode;
@@ -10,12 +11,13 @@ type BackgroundProps = {
 
 export const Background: React.FC<BackgroundProps> = ({
 	className,
+	id,
 	variant = "grid",
 	children,
 	backgroundContent,
 }) => {
 	return (
-		<div className={cn("relative", className)}>
+		<div id={id} className={cn("relative", className)}>
 			<div
 				className={cn(
 					"h-full w-full bg-background absolute top-0 left-0 flex items-center justify-center pointer-events-none z-[-999]",

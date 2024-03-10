@@ -40,13 +40,13 @@ export const ProjectView: React.FC<ProjectViewProps> = ({
 					exit="hidden"
 				>
 					<motion.div
-						className="sticky top-14 flex gap-4 py-1 z-10 bg-background"
+						className="sticky top-0 md:top-14 -mx-px flex gap-4 py-1 z-10 md:bg-background md:border-none  border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 						variants={FlyInVariant}
 					>
 						<Link href="/projects">
 							<Button variant={"link"}>&larr; Back</Button>
 						</Link>
-						<motion.h1 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0 sticky top-24">
+						<motion.h1 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0 sticky top-24">
 							{project.title}
 						</motion.h1>
 					</motion.div>

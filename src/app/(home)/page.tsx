@@ -6,6 +6,7 @@ const Page = () => {
 		<Background
 			className="max-w-screen-xl w-full min-h-dvh md:min-h-dvh flex flex-col justify-center gap-8 p-8 mx-auto"
 			variant="dots"
+			id="home"
 		>
 			<BannerSection className=" flex flex-col justify-center gap-0 mx-auto md:mx-0 max-w-full" />
 		</Background>

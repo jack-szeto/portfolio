@@ -2,7 +2,7 @@ import { socials } from "@/data/socials";
 
 const Footer = async () => {
 	return (
-		<footer className="flex flex-col justify-center items-center w-full p-16">
+		<footer className="flex flex-col justify-center items-center w-full p-16 pb-20 md:pb-16">
 			<div className="flex justify-center items-center">
 				{socials.map((social) => (
 					<a

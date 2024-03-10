@@ -1,18 +1,8 @@
 "use client";
 
+import { MouseEnterContext, use3dRotation } from "@/hooks/use-3d-rotation";
 import { cn } from "@/lib/utils";
-import React, {
-	createContext,
-	useState,
-	useContext,
-	useRef,
-	useEffect,
-	useCallback,
-} from "react";
-
-const MouseEnterContext = createContext<
-	[boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
->(undefined);
+import React, { useContext, useRef, useEffect, useCallback } from "react";
 
 export const CardContainer = ({
 	children,
@@ -23,28 +13,14 @@ export const CardContainer = ({
 	className?: string;
 	containerClassName?: string;
 }) => {
-	const containerRef = useRef<HTMLDivElement>(null);
-	const [isMouseEntered, setIsMouseEntered] = useState(false);
-
-	const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (!containerRef.current) return;
-		const { left, top, width, height } =
-			containerRef.current.getBoundingClientRect();
-		const x = (e.clientX - left - width / 2) / 25;
-		const y = (e.clientY - top - height / 2) / 25;
-		containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-	};
-
-	const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-		setIsMouseEntered(true);
-		if (!containerRef.current) return;
-	};
-
-	const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (!containerRef.current) return;
-		setIsMouseEntered(false);
-		containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
-	};
+	const {
+		containerRef,
+		isMouseEntered,
+		setIsMouseEntered,
+		handleMouseEnter,
+		handleMouseMove,
+		handleMouseLeave,
+	} = use3dRotation();
 	return (
 		<MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
 			<div
@@ -64,7 +40,9 @@ export const CardContainer = ({
 					className={cn(
 						"flex items-center justify-center relative transition-all duration-200 ease-linear",
 						className,
-						isMouseEntered ? "shadow-lg md:shadow-2xl shadow-gray-200 dark:shadow-gray-800" : ""
+						isMouseEntered
+							? "shadow-lg md:shadow-2xl shadow-gray-200 dark:shadow-gray-800"
+							: ""
 					)}
 					style={{
 						transformStyle: "preserve-3d",

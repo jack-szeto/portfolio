@@ -82,7 +82,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = (
 							{"I'd love to hear from you."}
 						</motion.p>
 
-						<div className="flex flex-col gap-0">
+						<div className="flex flex-col gap-0 max-w-full">
 							<SendMessageForm />
 
 							<motion.div
@@ -91,7 +91,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = (
 							/>
 
 							<motion.div
-								className="scroll-m-20 text-lg font-light tracking-tight"
+								className="scroll-m-20 text-lg font-light tracking-tight text-center"
 								variants={FlyInVariant}
 							>
 								{"Or you can reach me at "}
@@ -167,7 +167,7 @@ const SendMessageForm: React.FC = () => {
 	return (
 		<form
 			id="contact-form"
-			className="relative w-96 flex flex-col gap-4 rounded-md"
+			className="relative w-96 max-w-full flex flex-col gap-4 rounded-md"
 			action={(p) => {
 				startCountdown();
 				formAction(p);

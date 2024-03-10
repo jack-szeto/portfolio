@@ -56,7 +56,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = (
 							<CarouselContent className="p-8 md:py-16">
 								{items.map((item) => (
 									<CarouselItem
-										className=" basis-11/12 md:basis-1/2 lg:basis-1/3"
+										className=" basis-full md:basis-1/2 lg:basis-1/3"
 										key={item.title}
 									>
 										<motion.div variants={FlyInVariant}>

@@ -11,10 +11,11 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 export function ModeToggle() {
 	const { setTheme } = useTheme();
-
+	const isDesktop = useMediaQuery("(min-width: 768px)");
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
@@ -24,7 +25,7 @@ export function ModeToggle() {
 					<span className="sr-only">Toggle theme</span>
 				</Button>
 			</DropdownMenuTrigger>
-			<DropdownMenuContent align="end">
+			<DropdownMenuContent align={isDesktop ? "end" : "center"}>
 				<DropdownMenuItem onClick={() => setTheme("light")}>
 					Light
 				</DropdownMenuItem>
