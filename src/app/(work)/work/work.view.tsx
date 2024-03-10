@@ -39,6 +39,10 @@ export const WorkView: React.FC<WorkViewProps> = ({ className, works }) => {
 							className="max-w-screen-md"
 							variants={FlyInVariant}
 						>
+							<motion.div
+								className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full"
+								variants={FlyInVariant}
+							/>
 							<motion.h2 className="text-2xl font-semibold">
 								{work.position}
 							</motion.h2>
@@ -62,6 +66,7 @@ export const WorkView: React.FC<WorkViewProps> = ({ className, works }) => {
 									.map((line, i) => (
 										<React.Fragment key={i}>
 											{line}
+											<br />
 											<br />
 										</React.Fragment>
 									))}

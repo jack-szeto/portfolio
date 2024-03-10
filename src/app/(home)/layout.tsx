@@ -1,4 +1,5 @@
 import { TracingBeam } from "@/components/ui/tracing-beam";
+import { Suspense } from "react";
 
 export default function Layout({
 	children,
@@ -19,10 +20,10 @@ export default function Layout({
 			containerClassName="min-h-dvh max-w-screen-xl"
 		>
 			{children}
-			{featured}
-			{about}
-			{skills}
-			{contactForm}
+			<Suspense>{featured}</Suspense>
+			<Suspense>{about}</Suspense>
+			<Suspense>{skills}</Suspense>
+			<Suspense>{contactForm}</Suspense>
 		</TracingBeam>
 	);
 }
